@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "D:/Projects/rush/rush-clischema/rush.json",
+  "title": "Rush Metadata",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name",
+      "type": "string"
+    },
+    "description": {
+      "description": "The description",
+      "type": "string"
+    },
+    "version": {
+      "description": "Version related information",
+      "type": "object",
+      "properties": {
+        "number" : {
+					"description": "The version number",
+          "oneOf": [
+            {
+							"type": "integer",
+							"exclusiveMinimun": 0
+						},
+            {
+              "type": "string",
+              "enum": ["auto"]
+            }
+          ]
+				},
+        "name": {
+					"description": "The version name",
+					"type": "string"
+				},
+        "required": ["number"]
+      }
+    },
+    "assets": {
+			"description": "Asset related information",
+			"type": "object",
+			"properties": {
+				"icon": {
+					"description": "The icon",
+					"type": "string"
+				},
+				"other": {
+					"description": "The version name",
+					"type": "array"
+				}
+			}
+		},
+    "deps": {
+      "description": "Dependencies",
+      "type": "array"
+    },
+    "release": {
+      "description": "Release related information",
+      "type": "object",
+      "properties": {
+        "optimize": {
+          "description": "Indicates whether to optimize the extension or not",
+          "type": "boolean"
+        },
+        "required": ["optimize"]
+      }
+    },
+    "kotlin": {
+      "description": "Kotlin language related information",
+      "type": "object",
+      "properties": {
+        "enable": {
+          "description": "Indicates whether to enable Kotlin language support or not",
+          "type": "boolean"
+        },
+        "required": "enable"
+      }
+    },
+    "license_url": {
+      "description": "License",
+      "type": "string"
+    },
+    "min_sdk": {
+      "description": "Minimum Android SDK",
+      "type": "integer",
+      "minimum": 7
+    },
+    "homepage": {
+      "description": "Homepage",
+      "type": "string"
+    },
+    "authors": {
+      "descrription": "Authors",
+      "type": "array"
+    }
+  },
+  "required": ["name", "description", "version"]
+}
