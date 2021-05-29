@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "D:/Projects/rush/rush-clischema/rush.json",
+  "$id": "https://raw.githubusercontent.com/shreyashsaitwal/MyRepo/master/rush.json",
   "title": "Rush Metadata",
   "type": "object",
   "properties": {
