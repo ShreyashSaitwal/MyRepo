@@ -17,12 +17,12 @@
       "type": "object",
       "properties": {
         "number" : {
-					"description": "The version number",
+	  			"description": "The version number",
           "oneOf": [
             {
-							"type": "integer",
-							"exclusiveMinimun": 0
-						},
+	      			"type": "integer",
+	       			"exclusiveMinimun": 0
+	     			},
             {
               "type": "string",
               "enum": ["auto"]
